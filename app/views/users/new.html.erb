@@ -1,0 +1,41 @@
+<h3>Crear Usuario</h3>
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :first_name%><br />
+    <%= f.text_field :first_name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name%><br />
+    <%= f.text_field :last_name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email%>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.phone_field :phone_number%>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date%><br />
+    <%= f.text_field :birth_date, class:"datepicker" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password%><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.submit "CREA ESA VERGA HP" %>
+  </div>
+<% end %>
+<script> 
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });    
+</script>

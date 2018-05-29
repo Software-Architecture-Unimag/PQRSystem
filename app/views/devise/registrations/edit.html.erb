@@ -4,6 +4,15 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name, class: '' %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, class: '' %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "off" %>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -11,6 +20,16 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+    
+  <div class="field">
+    <%= f.label :phone_number, class: '' %><br />
+    <%= f.phone_field :phone_number, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate, class: '' %><br />
+    <%= f.text_field :birth_date, autofocus: true, autocomplete: "off", class:'datepicker' %>
+  </div>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
@@ -41,3 +60,9 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+<script> 
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });    
+</script>

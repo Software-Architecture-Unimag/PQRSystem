@@ -10,30 +10,6 @@
   </head>
 
   <body>
-    <div>  
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">PQR System</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-        <% if user_signed_in? %>
-      <li>
-        <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
-      </li>
-        <% else %>
-          <li>
-        <%= link_to "Iniciar Sesión", new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to "Registrarse", new_user_registration_path %>
-      </li>
-        <% end %>
-              
-      </ul>
-    </div>
-  </nav>
-</div>
-
     <%= yield %>
   </body>
 </html>
