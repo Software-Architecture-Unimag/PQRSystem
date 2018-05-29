@@ -1,0 +1,35 @@
+<div class="container">
+	
+	<h1 class="center">Usuarios</h1>
+	<table>
+	  <thead>
+	    <tr>
+	      <th class="center">Id</th>
+	      <th class="center">Nombres</th>
+	      <th class="center">Apellidos</th>
+	      <th class="center">Email</th>
+	      <th class="center">Telefono</th>
+	      <th class="center">Fecha de Nacimiento</th>
+	      <th class="center">Rol</th>
+	      <th class="center">Departamento</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @users.each do |user| %>
+	      <tr>
+	        <td class="center"><%= user.id %></td>
+	        <td class="center"><%= user.first_name %></td>
+	        <td class="center"><%= user.last_name %></td>
+	        <td class="center"><%= user.email %></td>
+	        <td class="center"><%= user.phone_number %></td>
+	        <td class="center"><%= user.birth_date %></td>
+
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	<br> <p id="notice"><%= notice %></p>
+
+</div>
