@@ -1,45 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12">
+            <div class="card-panel">
+				<h5 class="center">PQRs</h1>
+                    <p id="notice"><%= notice %></p>
 
-<h1>Pqrs</h1>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>First name</th>
+                          <th>Last name</th>
+                          <th>Email</th>
+                          <th>Title</th>
+                          <th>Subject</th>
+                          <th>Body</th>
+                          <th>Creation date</th>
+                          <th>Expiration date</th>
+                          <th>User</th>
+                          <th>Pqr files</th>
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Title</th>
-      <th>Subject</th>
-      <th>Body</th>
-      <th>Creation date</th>
-      <th>Expiration date</th>
-      <th>User</th>
-      <th>Pqr files</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                      <tbody>
+                        <% @pqrs.each do |pqr| %>
+                          <tr>
+                            <td><%= pqr.first_name %></td>
+                            <td><%= pqr.last_name %></td>
+                            <td><%= pqr.email %></td>
+                            <td><%= pqr.title %></td>
+                            <td><%= pqr.subject %></td>
+                            <td><%= pqr.body %></td>
+                            <td><%= pqr.creation_date %></td>
+                            <td><%= pqr.expiration_date %></td>
+                            <td><%= pqr.user %></td>
+                            <td><%= pqr.pqr_files %></td>
+                            <td><%= link_to 'Show', pqr %></td>
+                            <td><%= link_to 'Edit', edit_pqr_path(pqr) %></td>
+                            <td><%= link_to 'Destroy', pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
 
-  <tbody>
-    <% @pqrs.each do |pqr| %>
-      <tr>
-        <td><%= pqr.first_name %></td>
-        <td><%= pqr.last_name %></td>
-        <td><%= pqr.email %></td>
-        <td><%= pqr.title %></td>
-        <td><%= pqr.subject %></td>
-        <td><%= pqr.body %></td>
-        <td><%= pqr.creation_date %></td>
-        <td><%= pqr.expiration_date %></td>
-        <td><%= pqr.user %></td>
-        <td><%= pqr.pqr_files %></td>
-        <td><%= link_to 'Show', pqr %></td>
-        <td><%= link_to 'Edit', edit_pqr_path(pqr) %></td>
-        <td><%= link_to 'Destroy', pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                    <br>
 
-<br>
+                    <%= link_to 'Crear Pqr', new_pqr_path, class:'btn pink' %>
 
-<%= link_to 'New Pqr', new_pqr_path %>
+
+            </div>
+	    </div>
+	</div>
+</div>

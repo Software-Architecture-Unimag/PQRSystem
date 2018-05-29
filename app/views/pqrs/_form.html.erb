@@ -10,56 +10,60 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+    <div class="field col s12 m6">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :subject %>
+        <%= form.text_field :subject %>
+    </div>
 
-  <div class="field">
-    <%= form.label :subject %>
-    <%= form.text_field :subject %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+    </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
+    <div class="field col s12 m6 hide">
+        <%= form.label :creation_date %>
+        <%= form.datetime_select :creation_date %>
+    </div>
 
-  <div class="field">
-    <%= form.label :creation_date %>
-    <%= form.datetime_select :creation_date %>
-  </div>
+    <div class="field col s12 m6">
+        <%= form.label :expiration_date %>
+        <%= form.datetime_select :expiration_date %>
+    </div>
+     <% if user_signed_in? %>
 
-  <div class="field">
-    <%= form.label :expiration_date %>
-    <%= form.datetime_select :expiration_date %>
-  </div>
+    <% else %>
+        <div class="field col s12 m6">
+            <%= form.label :user_id %>          
+            <%= form.text_field :user_id %>
+        </div>
+    <% end %>
+    <div class="field col s12 m6">
+        <%= form.label :pqr_files_id %>
+        <%= form.file_field :pqr_files_id %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pqr_files_id %>
-    <%= form.text_field :pqr_files_id %>
-  </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>
