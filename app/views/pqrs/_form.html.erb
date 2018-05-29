@@ -11,20 +11,24 @@
     </div>
   <% end %>
 <div class="row">
-    <div class="field col s12 m6">
-        <%= form.label :first_name %>
-        <%= form.text_field :first_name %>
-    </div>
+    <% unless user_signed_in? %>
 
-    <div class="field col s12 m6">
-        <%= form.label :last_name %>
-        <%= form.text_field :last_name %>
-    </div>
+        <div class="field col s12 m6">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name %>
+        </div>
 
-    <div class="field col s12 m6">
-        <%= form.label :email %>
-        <%= form.text_field :email %>
-    </div>
+        <div class="field col s12 m6">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name %>
+        </div>
+
+        <div class="field col s12 m6">
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+        </div>
+
+    <% end %>
 
     <div class="field col s12 m6">
         <%= form.label :title %>
@@ -50,17 +54,15 @@
         <%= form.label :expiration_date %>
         <%= form.datetime_select :expiration_date %>
     </div>
-     <% if user_signed_in? %>
 
-    <% else %>
-        <div class="field col s12 m6">
-            <%= form.label :user_id %>          
+    <div class="field col s12 m6">
+            <%= form.label :user_id %>
             <%= form.text_field :user_id %>
-        </div>
-    <% end %>
+    </div>
+
     <div class="field col s12 m6">
         <%= form.label :pqr_files_id %>
-        <%= form.file_field :pqr_files_id %>
+        <%= form.text_field :pqr_files_id, value:'1' %>
     </div>
 
 </div>
@@ -69,3 +71,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+<input type="file">
