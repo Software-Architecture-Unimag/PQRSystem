@@ -4,6 +4,17 @@
     <title>PQRS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,4 +23,8 @@
   <body>
     <%= yield %>
   </body>
+
+     <script>
+         $('body').addClass('pink darken-4');
+     </script>
 </html>
