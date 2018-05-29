@@ -1,0 +1,2 @@
+class PqrFile < ApplicationRecord
+end

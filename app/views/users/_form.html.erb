@@ -1,5 +1,12 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
+    
+    <% @user.errors.full_messages.each do |message| %>
+      <div class="red darken-3">
+          <%= message %>
+      </div>
+    <% end %>
+    
     <div class="field">
       <%= f.label :first_name%><br />
       <%= f.text_field :first_name%>
