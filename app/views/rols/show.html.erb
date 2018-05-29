@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12 offset-m4 m4">
+            <div class="card-panel">
+                <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @rol.name %>
-</p>
+                <p>
+                  <strong>Name:</strong>
+                  <%= @rol.name %>
+                </p>
 
-<%= link_to 'Edit', edit_rol_path(@rol) %> |
-<%= link_to 'Back', rols_path %>
+                <%= link_to 'Edit', edit_rol_path(@rol) %> |
+                <%= link_to 'Back', rols_path %>
+            </div>
+	    </div>
+	</div>
+</div>

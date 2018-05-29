@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12">
+            <div class="card-panel">
+				<h5 class="center">Editar Rol</h1>
+                    <p id="notice"><%= notice %></p>
 
-<h1>Rols</h1>
+                    <table class="centered highlight responsive-table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                      <tbody>
+                        <% @rols.each do |rol| %>
+                          <tr>
+                            <td><%= rol.id %></td>
+                            <td><%= rol.name %></td>
+                            <!-- <td><%= link_to 'Show', rol %></td> -->
+                            <td><%= link_to 'Edit', edit_rol_path(rol), class:'btn ' %></td>
+                            <td><%= link_to 'Destroy', rol, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn red' %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
 
-  <tbody>
-    <% @rols.each do |rol| %>
-      <tr>
-        <td><%= rol.id %></td>
-        <td><%= rol.name %></td>
-        <td><%= link_to 'Show', rol %></td>
-        <td><%= link_to 'Edit', edit_rol_path(rol) %></td>
-        <td><%= link_to 'Destroy', rol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                    <br>
 
-<br>
-
-<%= link_to 'New Rol', new_rol_path %>
+                    <%= link_to 'Crear un rol', new_rol_path, class:'btn pink' %>
+            </div>
+	    </div>
+	</div>
+</div>
