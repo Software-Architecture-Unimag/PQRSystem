@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_143327) do
+ActiveRecord::Schema.define(version: 2018_05_29_145043) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2018_05_29_143327) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pqrs", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "title"
+    t.string "subject"
+    t.text "body"
+    t.datetime "creation_date"
+    t.datetime "expiration_date"
+    t.integer "user_id"
+    t.integer "pqr_files_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pqr_files_id"], name: "index_pqrs_on_pqr_files_id"
+    t.index ["user_id"], name: "index_pqrs_on_user_id"
   end
 
   create_table "rols", force: :cascade do |t|

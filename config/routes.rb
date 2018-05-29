@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pqrs
   resources :pqr_files
   get 'users/index'
   devise_for :users
