@@ -1,72 +1,74 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
-    
+
     <% @user.errors.full_messages.each do |message| %>
       <div class="red darken-3">
           <%= message %>
       </div>
     <% end %>
-    
-    <div class="field">
-      <%= f.label :first_name%><br />
-      <%= f.text_field :first_name%>
+<div class="row">
+    <div class="field col s12 m6">
+        <%= f.label :first_name%><br />
+        <%= f.text_field :first_name%>
     </div>
 
-    <div class="field">
-      <%= f.label :last_name%><br />
-      <%= f.text_field :last_name%>
+    <div class="field col s12 m6">
+        <%= f.label :last_name%><br />
+        <%= f.text_field :last_name%>
     </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email%>
+    <div class="field col s12 m6">
+        <%= f.label :email %><br />
+        <%= f.email_field :email%>
     </div>
 
-    <div class="field">
-      <%= f.label :phone_number %><br />
-      <%= f.phone_field :phone_number%>
+    <div class="field col s12 m6">
+        <%= f.label :phone_number %><br />
+        <%= f.phone_field :phone_number%>
     </div>
 
-    <div class="field">
-      <%= f.label :birth_date%><br />
-      <%= f.text_field :birth_date, class:"datepicker" %>
+    <div class="field col s12 m6">
+        <%= f.label :birth_date%><br />
+        <%= f.text_field :birth_date, class:"datepicker" %>
     </div>
 
-    <div class="field">
-      <%= f.label :password%><br />
-      <%= f.password_field :password %>
+    <div class="field col s12 m6">
+        <%= f.label :password%><br />
+        <%= f.password_field :password %>
     </div>
 
-    <div class="field">
-      Tipo de Usuario
-      <select name="user[rol_id]"> 
-          <option  value="0" disabled selected> Seleccione una opción </option>
-          <% Rol.all.each do |r| %>
+    <div class="field col s12 m6">
+        Tipo de Usuario
+        <select name="user[rol_id]">
+            <option  value="0" disabled selected> Seleccione una opción </option>
+            <% Rol.all.each do |r| %>
             <option value="<%= r.id %>"> <%= r.name %> </option>
-          <% end %>
-      </select>
+            <% end %>
+        </select>
     </div>
 
-    <div class="field">
-      Departamento de trabajo
-      <select name="user[department_id]">
-          <option  value="0" disabled selected> Seleccione una opción </option>
-          <% Department.all.each do |dp| %>
+    <div class="field col s12 m6">
+        Departamento de trabajo
+        <select name="user[department_id]">
+            <option  value="0" disabled selected> Seleccione una opción </option>
+            <% Department.all.each do |dp| %>
             <option  value="<%= dp.id %>"> <%= dp.name %> </option>
-          <% end %>
-      </select>
+            <% end %>
+        </select>
     </div>
 
+</div>
+
     <div class="field">
-      <%= f.submit "Crear", class:"waves-effect waves-light btn green accent-3" %>
+      <%= f.submit "Guardar", class:"waves-effect waves-light btn pink white-text" %>
     </div>
   <% end %>
 </div>
-<script> 
+<script>
   $(document).ready(function(){
     $('select').formSelect();
   });
   $(document).ready(function(){
     $('.datepicker').datepicker();
-  });    
+  });
 </script>

@@ -1,19 +1,22 @@
 <nav class="pink darken-3">
   <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">ABC - PQR System</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
-          <li>
-          <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
-          </li>
-          <% else %>
-            <li>
-          <%= link_to "Iniciar Sesión", new_user_session_path %>
-          </li>
-          <li>
-          <%= link_to "Registrarse", new_user_registration_path %>
-          </li>
-          <% end %>
-      </ul>
+      <div class="container">
+          <a href="#" class="brand-logo">ABC - PQR System</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <% if user_signed_in? %>
+              <li>
+                  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
+              </li>
+              <% else %>
+              <li>
+                  <%= link_to "Iniciar Sesión", new_user_session_path %>
+              </li>
+              <li>
+                  <%= link_to "Registrarse", new_user_registration_path %>
+              </li>
+              <% end %>
+          </ul>
+
+      </div>
   </div>
 </nav>

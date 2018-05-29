@@ -20,7 +20,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-    
+
   <div class="field">
     <%= f.label :phone_number, class: '' %><br />
     <%= f.phone_field :phone_number, autofocus: true, autocomplete: "off" %>
@@ -61,8 +61,8 @@
 
 <%= link_to "Back", :back %>
 
-<script> 
+<script>
   $(document).ready(function(){
     $('.datepicker').datepicker();
-  });    
+  });
 </script>

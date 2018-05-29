@@ -1,44 +1,49 @@
 <div class="container">
+    <div class="row">
+        <br>
+        <div class="">
+            <div class="card-panel">
+				<h1 class="center">Usuarios</h1>
+				<table class="centered highlight responsive-table">
+				  <thead>
+				    <tr>
+				      <th>Id</th>
+				      <th>First Name</th>
+				      <th>Last Name</th>
+				      <th>Email</th>
+				      <th>Phone Number</th>
+				      <th>Birth Date</th>
+				      <th>Rol</th>
+				      <th>Departament</th>
+				      <th colspan="3">Actions</th>
+				    </tr>
+				  </thead>
 
-	<h1 class="center">Usuarios</h1>
-	<table class="centered">
-	  <thead>
-	    <tr>
-	      <th>Id</th>
-	      <th>First Name</th>
-	      <th>Last Name</th>
-	      <th>Email</th>
-	      <th>Phone Number</th>
-	      <th>Birth Date</th>
-	      <th>Rol</th>
-	      <th>Departament</th>
-	      <th colspan="3">Actions</th>
-	    </tr>
-	  </thead>
-
-	  <tbody>
-	    <% @users.each do |user| %>
-	      <tr>
-	        <td><%= user.id %></td>
-	        <td><%= user.first_name %></td>
-	        <td><%= user.last_name %></td>
-	        <td><%= user.email %></td>
-	        <td><%= user.phone_number %></td>
-	        <td><%= user.birth_date %></td>
-	        <td><%= user.rol_id %></td>
-	        <td><%= user.department_id %></td>
-	        <td>
-	        	<%= link_to "Edit", edit_user_path(user), class:"waves-effect waves-light btn btn-small blue darken-3" %>
-	        	<%= link_to "Delete", user, method: :delete, class:"waves-effect waves-light btn btn-small red darken-4" %>
-	        </td>
+				  <tbody>
+				    <% @users.each do |user| %>
+				      <tr>
+				        <td><%= user.id %></td>
+				        <td><%= user.first_name %></td>
+				        <td><%= user.last_name %></td>
+				        <td><%= user.email %></td>
+				        <td><%= user.phone_number %></td>
+				        <td><%= user.birth_date %></td>
+				        <td><%= user.rol_id %></td>
+				        <td><%= user.department_id %></td>
+				        <td>
+				        	<%= link_to  '<i class="material-icons">create</i> Do it@'.html_safe, edit_user_path(user), class:"btn-floating waves-effect waves-light btn btn-small green darken-3" %>
+				        	<%= link_to  '<i class="material-icons">delete-forever</i> Do it@'.html_safe, user, method: :delete, class:"btn-floating waves-effect waves-light btn btn-small red darken-4" %>
+				        </td>
 
 
-	      </tr>
-	    <% end %>
-	  </tbody>
-	</table>
-	<br>
-	<%= link_to "Crear Usuario", new_user_path, class:"waves-effect waves-light btn green accent-3" %>
-	<br> <p id="notice"><%= notice %></p>
-
+				      </tr>
+				    <% end %>
+				  </tbody>
+				</table>
+				<br>
+				<%= link_to "Crear Usuario", new_user_path, class:"waves-effect waves-light btn pink accent-3" %>
+				<br> <p id="notice"><%= notice %></p>
+			</div>
+	    </div>
+	</div>
 </div>
