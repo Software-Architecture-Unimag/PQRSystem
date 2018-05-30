@@ -46,7 +46,4 @@ test:
 
 
 production:
-  <<: *default
-  database: pqrs_production
-  username: pqrs
-  password: <%= ENV['PQRS_DATABASE_PASSWORD'] %>
+  url: 'mysql2://b88e93b41d1d92:fa18f0ef@us-cdbr-iron-east-04.cleardb.net/heroku_00bd5286929bf05?reconnect=true'
