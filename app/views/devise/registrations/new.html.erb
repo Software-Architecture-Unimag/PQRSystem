@@ -5,8 +5,8 @@
             <div class="card-panel">
                 <center><h5>Registro</h5></center>
                 <div class="row">
-                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                    <%= devise_error_messages! %>
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                     <%= devise_error_messages! %>
 
                     <div class="field col s12 m6">
                         <%= f.label :first_name, class: '' %><br />
@@ -46,11 +46,13 @@
                         <%= f.label :birthdate, class: '' %><br />
                         <%= f.text_field :birth_date, autofocus: true, autocomplete: "off", class:'datepicker' %>
                     </div>
+
+
+                    <div class="actions center">
+                        <%= f.submit "Registrar" %>
+                    </div>
+                    <% end %>
                 </div>
-                <div class="actions center">
-                    <%= f.submit "Registrar" %>
-                </div>
-                <% end %>
 
             </div>
             <div class="card-panel center">

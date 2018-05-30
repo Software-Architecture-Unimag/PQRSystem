@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :statuses
+  resources :logs
+  resources :notifications
   resources :pqrs
   resources :pqr_files
   get 'users/index'

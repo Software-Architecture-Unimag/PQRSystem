@@ -11,6 +11,7 @@ class CreatePqrs < ActiveRecord::Migration[5.2]
       t.datetime :expiration_date
       t.references :user, foreign_key: true
       t.references :pqr_files, foreign_key: true
+      t.references :status, foreign_key: true
 
       t.timestamps
     end

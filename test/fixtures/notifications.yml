@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-05-30 00:16:44
+  message: MyString
+  pqr: one
+  user: one
+
+two:
+  date: 2018-05-30 00:16:44
+  message: MyString
+  pqr: two
+  user: two
