@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12 offset-m3 m6">
+            <div class="card-panel z-depth-4">
+				<h5 class="center">Registro</h1>
+                <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @log.user %>
-</p>
+                <p>
+                  <strong>User:</strong>
+                  <%= @log.user %>
+                </p>
 
-<p>
-  <strong>Pqr:</strong>
-  <%= @log.pqr %>
-</p>
+                <p>
+                  <strong>Pqr:</strong>
+                  <%= @log.pqr %>
+                </p>
 
-<p>
-  <strong>Action:</strong>
-  <%= @log.action %>
-</p>
+                <p>
+                  <strong>Action:</strong>
+                  <%= @log.action %>
+                </p>
 
-<p>
-  <strong>Backup:</strong>
-  <%= @log.backup %>
-</p>
+                <p>
+                  <strong>Backup:</strong>
+                  <%= @log.backup %>
+                </p>
 
-<%= link_to 'Edit', edit_log_path(@log) %> |
-<%= link_to 'Back', logs_path %>
+                <%= link_to 'Edit', edit_log_path(@log) %> |
+                <%= link_to 'Back', logs_path %>

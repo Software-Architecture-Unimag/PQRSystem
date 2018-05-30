@@ -1,27 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12 offset-m3 m6">
+            <div class="card-panel z-depth-4">
+				<h5 class="center">Departamentos</h1>
+                <p id="notice"><%= notice %></p>
 
-<h1>Departments</h1>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                  <tbody>
+                    <% @departments.each do |department| %>
+                      <tr>
+                        <td><%= department.name %></td>
+                        <td><%= link_to 'Show', department %></td>
+                        <td><%= link_to 'Edit', edit_department_path(department) %></td>
+                        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
 
-  <tbody>
-    <% @departments.each do |department| %>
-      <tr>
-        <td><%= department.name %></td>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                <br>
 
-<br>
-
-<%= link_to 'New Department', new_department_path %>
+                <%= link_to 'New Department', new_department_path %>
+            </div>
+	    </div>
+	</div>
+</div>

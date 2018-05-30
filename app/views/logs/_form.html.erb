@@ -11,19 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+<div class="row">
+        <div class="field col s12">
+            Usuario que realiza la accion
+            <select name="log[user_id]">
+                <option  value="0" disabled selected> Seleccione una opción </option>
+                <% User.all.each do |r| %>
+                <option value="<%= r.id %>"> <%= r.first_name %> <%= r.last_name %> </option>
+                <% end %>
+            </select>
+        </div>
 
-  <div class="field">
-    <%= form.label :pqr_id %>
-    <%= form.text_field :pqr_id %>
-  </div>
+        <div class="field col s12">
+            PQR al cual se le realiza la accion
+            <select name="log[pqr_id]">
+                <option  value="0" disabled selected> Seleccione una opción </option>
+                <% Pqr.all.each do |r| %>
+                <option value="<%= r.id %>"> PQR # <%= r.id %> (<%= r.title %>) </option>
+                <% end %>
+            </select>
+        </div>
+
+    </div>
 
   <div class="field">
     <%= form.label :action %>
-    <%= form.text_field :action %>
+    <!-- <%= form.text_field :action %> -->
+    <select name="log[action]" id="">
+        <option  value="0" disabled selected> Seleccione una opción </option>
+        <option value="Create">Create</option>
+        <option value="Update">Update</option>
+        <option value="Delete">Delete</option>
+    </select>
   </div>
 
   <div class="field">

@@ -14,3 +14,25 @@ main {
         width: 85%;
     }
 }
+
+/*================ modificacion de materialize ===========*/
+.input-field label {
+	font-size: 16px;
+}
+.input-field input{
+	/*font-size: 20px;*/
+	padding-left: 5px;
+}
+
+.input-field input:focus {
+ 	border-bottom: 1px solid #c51162  !important;
+ 	box-shadow: 0 1px 0 0 #c51162  !important;
+}
+.input-field label.active {
+ 	color: #c51162  !important;
+}
+
+[type="checkbox"]:checked:disabled + label:before {
+	border-right: 2px solid purple;
+    border-bottom: 2px solid purple;
+}

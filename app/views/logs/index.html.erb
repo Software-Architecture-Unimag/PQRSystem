@@ -1,33 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12">
+            <div class="card-panel z-depth-4">
+				<h5 class="center">Registros</h1>
+                    <p id="notice"><%= notice %></p>
 
-<h1>Logs</h1>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>User</th>
+                          <th>Pqr</th>
+                          <th>Action</th>
+                          <th>Backup</th>
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Pqr</th>
-      <th>Action</th>
-      <th>Backup</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                      <tbody>
+                        <% @logs.each do |log| %>
+                          <tr>
+                            <td><%= log.user.first_name %> <%= log.user.last_name %></td>
+                            <td>PQR # <%= log.pqr.id %> (<%= log.pqr.title %>)</td>
+                            <td><%= log.action %></td>
+                            <td><%= log.backup[0,35] %>..</td>
+                            <td><%= link_to 'Show', log %></td>
+                            <td><%= link_to 'Edit', edit_log_path(log) %></td>
+                            <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
 
-  <tbody>
-    <% @logs.each do |log| %>
-      <tr>
-        <td><%= log.user %></td>
-        <td><%= log.pqr %></td>
-        <td><%= log.action %></td>
-        <td><%= log.backup %></td>
-        <td><%= link_to 'Show', log %></td>
-        <td><%= link_to 'Edit', edit_log_path(log) %></td>
-        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                    <br>
 
-<br>
-
-<%= link_to 'New Log', new_log_path %>
+                    <%= link_to 'New Log', new_log_path %>
+            </div>
+        </div>
+    </div>
+</div>

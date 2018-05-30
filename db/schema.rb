@@ -64,14 +64,10 @@ ActiveRecord::Schema.define(version: 2018_05_30_052856) do
     t.text "body"
     t.datetime "creation_date"
     t.datetime "expiration_date"
-    t.bigint "user_id"
-    t.bigint "pqr_files_id"
     t.bigint "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pqr_files_id"], name: "index_pqrs_on_pqr_files_id"
     t.index ["status_id"], name: "index_pqrs_on_status_id"
-    t.index ["user_id"], name: "index_pqrs_on_user_id"
   end
 
   create_table "rols", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -118,9 +114,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_052856) do
   add_foreign_key "logs", "users"
   add_foreign_key "notifications", "pqrs"
   add_foreign_key "notifications", "users"
-  add_foreign_key "pqrs", "pqr_files", column: "pqr_files_id"
   add_foreign_key "pqrs", "statuses"
-  add_foreign_key "pqrs", "users"
   add_foreign_key "users", "departments"
   add_foreign_key "users", "rols"
 end

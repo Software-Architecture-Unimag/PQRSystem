@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>PQRS System | ABC</title>
     <%= csrf_meta_tags %>
@@ -20,5 +20,9 @@
 
      <script>
          $('body').addClass('pink darken-4');
+         $('select').formSelect();
+          $('.dropdown-trigger').dropdown({
+              constrainWidth: false
+          });
      </script>
 </html>

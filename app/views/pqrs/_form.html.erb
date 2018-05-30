@@ -1,7 +1,7 @@
 <%= form_with(model: pqr, local: true) do |form| %>
   <% if pqr.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pqr.errors.count, "error") %> prohibited this pqr from being saved:</h2>
+      <h5><%= pluralize(pqr.errors.count, "error") %> prohibited this pqr from being saved:</h5>
 
       <ul>
       <% pqr.errors.full_messages.each do |message| %>
@@ -42,12 +42,12 @@
         <%= form.text_area :body %>
     </div>
 
-    <div class="field col s12 m6">
-            <%= form.label :state_id %>
-            <%= form.text_field :state_id %>
-    </div>
+    <!-- <div class="field col s12 m6">
+            <%= form.label :status_id %>
+            <%= form.number_field :status_id %>
+    </div> -->
 
-    <!-- <div class="field col s12 m6 hide">
+    <div class="field col s12 m6 hide">
         <%= form.label :creation_date %>
         <%= form.datetime_select :creation_date %>
     </div>
@@ -57,7 +57,7 @@
         <%= form.datetime_select :expiration_date %>
     </div>
 
-    <div class="field col s12 m6">
+    <!-- <div class="field col s12 m6">
             <%= form.label :user_id %>
             <%= form.text_field :user_id %>
     </div>

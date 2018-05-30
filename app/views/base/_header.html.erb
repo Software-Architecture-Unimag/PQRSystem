@@ -1,12 +1,25 @@
 <nav class="pink darken-3">
   <div class="nav-wrapper">
       <div class="container">
-          <%= link_to "PQRS System | ABC", root_path, class:'brand-logo' %>
+          <%= link_to "PQRS System | ABC", root_path, class:'brand-logo hide-on-small-only' %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <% if user_signed_in? %>
                   <li>
                       <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
                   </li>
+                  <li>
+                       <a class='dropdown-trigger btn' href='#dropdown1' data-target='dropdown1'>Drop Me!</a>
+                  </li>
+                  <ul id='dropdown1' class='dropdown-content'>
+                      <li><%= link_to "CRUD User", users_path %></li>
+                      <li><%= link_to "CRUD Roles", rols_path %></li>
+                      <li><%= link_to "CRUD Departments", departments_path %></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><%= link_to "CRUD PQRs", pqrs_path %></li>
+                      <li><%= link_to "CRUD Statues", statuses_path %></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><%= link_to "CRUD Logs", logs_path %></li>
+                    </ul>
               <% else %>
                   <li>
                       <%= link_to "Iniciar Sesión", new_user_session_path %>
