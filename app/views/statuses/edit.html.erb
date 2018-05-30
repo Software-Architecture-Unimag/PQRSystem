@@ -1,6 +1,14 @@
-<h1>Editing Status</h1>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12 offset-m3 m6">
+            <div class="card-panel z-depth-4">
+				<h5 class="center">Editar estado</h1>
+                <%= render 'form', status: @status %>
 
-<%= render 'form', status: @status %>
-
-<%= link_to 'Show', @status %> |
-<%= link_to 'Back', statuses_path %>
+                <%= link_to 'Show', @status %> |
+                <%= link_to 'Back', statuses_path %>
+            </div>
+	    </div>
+	</div>
+</div>

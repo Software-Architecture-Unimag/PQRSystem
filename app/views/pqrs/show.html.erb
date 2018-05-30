@@ -1,54 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col s12">
+            <div class="card-panel">
+				<h5 class="center">PQR # <%= @pqr.id %></h1>
+                <p id="notice"><%= notice %></p>
+                <big>
+                    <p class="">
+                        <strong>Primer nombre:</strong>
+                        <%= @pqr.first_name %>
+                    </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @pqr.first_name %>
-</p>
+                    <p class="">
+                        <strong>Apellido:</strong>
+                        <%= @pqr.last_name %>
+                    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @pqr.last_name %>
-</p>
+                    <p class="">
+                        <strong>Correo:</strong>
+                        <%= @pqr.email %>
+                    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @pqr.email %>
-</p>
+                    <p class="">
+                        <strong>Titulo:</strong>
+                        <%= @pqr.title %>
+                    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @pqr.title %>
-</p>
+                    <p class="">
+                        <strong>Asunto:</strong>
+                        <%= @pqr.subject %>
+                    </p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @pqr.subject %>
-</p>
+                    <p class="">
+                        <strong>Cuerpo:</strong>
+                        <%= @pqr.body %>
+                    </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @pqr.body %>
-</p>
+                    <p class="">
+                        <strong>Estado:</strong>
+                        <%= @pqr.status_id %>
+                    </p>
 
-<p>
-  <strong>Creation date:</strong>
-  <%= @pqr.creation_date %>
-</p>
+                    <p class="">
+                        <strong>Fecha creacion:</strong>
+                        <%= @pqr.creation_date %>
+                    </p>
 
-<p>
-  <strong>Expiration date:</strong>
-  <%= @pqr.expiration_date %>
-</p>
+                    <p class="">
+                        <strong>Fecha vencimiento:</strong>
+                        <%= @pqr.expiration_date %>
+                    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @pqr.user %>
-</p>
+                </big>
 
-<p>
-  <strong>Pqr files:</strong>
-  <%= @pqr.pqr_files %>
-</p>
+                <%= link_to 'Edit', edit_pqr_path(@pqr) %> |
+                <%= link_to 'Back', pqrs_path %>
 
-<%= link_to 'Edit', edit_pqr_path(@pqr) %> |
-<%= link_to 'Back', pqrs_path %>
+            </div>
+	    </div>
+	</div>
+</div>
